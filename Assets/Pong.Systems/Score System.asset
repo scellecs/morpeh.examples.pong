@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 606f7cc8fc664dc0b7aaf94f419ce78b, type: 3}
+  m_Name: Score System
+  m_EditorClassIdentifier: 
+  currentScores: {fileID: 11400000, guid: 148cb2ea4200d8149a968ab9db88621c, type: 2}
+  highScores: {fileID: 11400000, guid: c4b1ffcd46ca0704387321044a6f7883, type: 2}
