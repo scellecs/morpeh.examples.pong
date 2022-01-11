@@ -45,7 +45,7 @@
                 case EScreenSide.Left:   return new Vector2(-rightTopCorner.x, 0f);
                 case EScreenSide.Top:    return new Vector2(0f, rightTopCorner.y);
                 case EScreenSide.Bottom: return new Vector2(0f, -rightTopCorner.y);
-                default:                throw new ArgumentOutOfRangeException();
+                default:                 throw new ArgumentOutOfRangeException();
             }
         }
 
