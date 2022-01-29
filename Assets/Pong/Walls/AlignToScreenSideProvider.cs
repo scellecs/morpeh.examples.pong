@@ -12,19 +12,18 @@
     }
 
     [Serializable]
-    public struct AlignToScreenSide : IComponent {
+    public struct AlignToScreenSide : IComponent, IValidatableWithGameObject {
         [Required] public Transform root;
         public Vector2 offset;
         public EScreenSide side;
-    }
 
-    [AddComponentMenu("Pong/" + nameof(AlignToScreenSide))]
-    public sealed class AlignToScreenSideProvider : MonoProvider<AlignToScreenSide> {
-        private void OnValidate() {
-            ref AlignToScreenSide data = ref GetData();
-            if (data.root == null) {
-                data.root = transform;
+        public void OnValidate(GameObject gameObject) {
+            if (root == null) {
+                root = gameObject.transform;
             }
         }
     }
+
+    [AddComponentMenu("Pong/" + nameof(AlignToScreenSide))]
+    public sealed class AlignToScreenSideProvider : MonoProvider<AlignToScreenSide> { }
 }

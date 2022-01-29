@@ -7,24 +7,23 @@
     using UnityEngine.UI;
 
     [Serializable]
-    public struct SliderToColor : IComponent {
+    public struct SliderToColor : IComponent, IValidatableWithGameObject {
         [Required] public Slider slider;
 
         [Required] public GlobalVariableColor color;
 
         [ReadOnly] public bool sliderChanged;
+
+        public void OnValidate(GameObject gameObject) {
+            if (slider == null) {
+                slider = gameObject.GetComponent<Slider>();
+            }
+        }
     }
 
     [RequireComponent(typeof(Slider))]
     [AddComponentMenu("Pong/UI/" + nameof(SliderToColor))]
     public sealed class SliderToColorProvider : MonoProvider<SliderToColor> {
-        private void OnValidate() {
-            ref SliderToColor data = ref GetData();
-            if (data.slider == null) {
-                data.slider = GetComponent<Slider>();
-            }
-        }
-
         private void Awake() {
             GetData().slider.onValueChanged.AddListener(SliderChanged);
         }

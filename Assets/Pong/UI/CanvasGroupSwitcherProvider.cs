@@ -6,22 +6,21 @@
     using UnityEngine;
 
     [Serializable]
-    public struct CanvasGroupSwitcher : IComponent {
+    public struct CanvasGroupSwitcher : IComponent, IValidatableWithGameObject {
         [Required] public CanvasGroup canvasGroup;
 
         [Required] public GlobalEvent globalEvent;
 
         public bool currentState;
+
+        public void OnValidate(GameObject gameObject) {
+            if (canvasGroup == null) {
+                canvasGroup = gameObject.GetComponent<CanvasGroup>();
+            }
+        }
     }
 
     [RequireComponent(typeof(CanvasGroup))]
     [AddComponentMenu("Pong/UI/" + nameof(CanvasGroupSwitcher))]
-    public sealed class CanvasGroupSwitcherProvider : MonoProvider<CanvasGroupSwitcher> {
-        private void OnValidate() {
-            ref CanvasGroupSwitcher data = ref GetData();
-            if (data.canvasGroup == null) {
-                data.canvasGroup = GetComponent<CanvasGroup>();
-            }
-        }
-    }
+    public sealed class CanvasGroupSwitcherProvider : MonoProvider<CanvasGroupSwitcher> { }
 }
