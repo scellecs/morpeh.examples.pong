@@ -17,9 +17,7 @@
         [Header("Utility things")]
         public Vector2 launchVelocity;
 
-        [ReadOnly] public Vector2 hitNormal;
-
-        [ReadOnly] public bool hit;
+        [ReadOnly] public HitData? hit;
 
         public void OnValidate(GameObject gameObject) {
             if (body == null) {
@@ -34,16 +32,30 @@
                 trail = gameObject.GetComponent<TrailRenderer>();
             }
         }
+
+        [Serializable]
+        public struct HitData {
+            public Vector2 normal;
+            public Entity entity;
+        }
     }
 
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(SpriteRenderer))]
     [AddComponentMenu("Pong/" + nameof(Ball))]
     public sealed class BallProvider : MonoProvider<Ball> {
-        private void OnCollisionEnter2D(Collision2D other) {
+        private void OnCollisionEnter2D(Collision2D collision) {
             ref Ball data = ref GetData();
-            data.hit = true;
-            data.hitNormal = other.GetContact(0).normal;
+            var hit = new Ball.HitData {
+                    normal = collision.GetContact(0).normal,
+            };
+
+            var entityProvider = collision.gameObject.GetComponent<EntityProvider>();
+            if (entityProvider != null) {
+                hit.entity = entityProvider.Entity;
+            }
+
+            data.hit = hit;
         }
     }
 

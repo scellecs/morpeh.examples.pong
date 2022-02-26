@@ -13,10 +13,10 @@
                 ball.SetVelocity(ball.speed * GetStartDirection());
             }
 
-            if (ball.hit) {
-                Vector2 reflectDirection = Vector2.Reflect(ball.launchVelocity, ball.hitNormal).normalized;
+            if (ball.hit.HasValue) {
+                Vector2 reflectDirection = Vector2.Reflect(ball.launchVelocity, ball.hit.Value.normal).normalized;
                 ball.SetVelocity(ball.speed * reflectDirection);
-                ball.hit = false;
+                ball.hit = null;
             }
         }
 
