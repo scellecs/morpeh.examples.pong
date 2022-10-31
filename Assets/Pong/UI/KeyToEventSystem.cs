@@ -13,7 +13,7 @@
         public override void OnUpdate(float deltaTime) {
             foreach (KeyToEvent keyToEvent in keys) {
                 if (Input.GetKeyDown(keyToEvent.keyCode)) {
-                    keyToEvent.globalEvent.NextFrame();
+                    keyToEvent.globalEvent.Publish();
                 }
             }
         }

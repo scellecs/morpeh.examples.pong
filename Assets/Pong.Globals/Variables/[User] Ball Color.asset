@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   internalEntityID: -1
   value: {r: 1, g: 0, b: 0, a: 1}
-  defaultSerializedValue: '{"value":{"r":0.0,"g":0.0,"b":0.0,"a":0.0}}'
+  defaultSerializedValue: 
   customKey: 4a8a8d8441bf44b3a9c276a6becd1486
   AutoSave: 1

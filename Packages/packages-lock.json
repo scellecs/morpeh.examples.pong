@@ -1,14 +1,21 @@
 {
   "dependencies": {
     "com.farco.morpeh.helpers": {
-      "version": "https://github.com/SH42913/morpeh.helpers.git?path=/Assets/Morpeh.Helpers",
+      "version": "https://github.com/SH42913/morpeh.helpers.git?path=/Assets/Morpeh.Helpers#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "1fce44efd5fad1e6aefecf2d9cfb25d97c4255b5"
+      "hash": "addd7fab16f13a7f521d73b482e069db80119551"
+    },
+    "com.scellecs.morpeh": {
+      "version": "https://github.com/scellecs/morpeh.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "bf3c297e251fd81f8fa1a4d3c571463756abb2cb"
     },
     "com.unity.2d.pixel-perfect": {
-      "version": "2.1.0",
+      "version": "4.0.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -28,16 +35,16 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "1.2.1",
+      "version": "3.0.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.1"
+        "com.unity.ext.nunit": "1.0.6"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.12",
+      "version": "2.0.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -46,7 +53,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.test-framework": {
-      "version": "1.1.30",
+      "version": "1.1.33",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -57,7 +64,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "2.1.6",
+      "version": "3.0.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -73,13 +80,6 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
-    },
-    "com.xcrew.morpeh": {
-      "version": "https://github.com/X-Crew/Morpeh.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "a47bacc33950f51fab290cb0efcaa33ff14074e5"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
@@ -189,6 +189,18 @@
       "depth": 0,
       "source": "builtin",
       "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.uielementsnative": "1.0.0"
+      }
+    },
+    "com.unity.modules.uielementsnative": {
+      "version": "1.0.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0"
       }
