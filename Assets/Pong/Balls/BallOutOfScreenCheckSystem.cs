@@ -1,7 +1,7 @@
 ﻿namespace Pong.Balls {
     using System;
-    using Morpeh;
-    using Morpeh.Helpers;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Helpers;
     using UnityEngine;
     using Utils;
 

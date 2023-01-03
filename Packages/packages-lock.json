@@ -5,14 +5,21 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "addd7fab16f13a7f521d73b482e069db80119551"
+      "hash": "d902a737ffa0f60fb54c96ef29ed2e4d0eaba8cd"
     },
     "com.scellecs.morpeh": {
       "version": "https://github.com/scellecs/morpeh.git#master",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "bf3c297e251fd81f8fa1a4d3c571463756abb2cb"
+      "hash": "41e595db45b20c957e5174ccfbb684d96e962285"
+    },
+    "com.scellecs.morpeh.globals": {
+      "version": "https://github.com/scellecs/morpeh.globals.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "6d6bc0b91bb5b747d7ce80116f44067a79ad0a9b"
     },
     "com.unity.2d.pixel-perfect": {
       "version": "4.0.1",

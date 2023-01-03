@@ -1,6 +1,6 @@
 ﻿namespace Pong.UI {
-    using Morpeh;
-    using Morpeh.Helpers;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Helpers;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/UI/" + nameof(GlobalIntToTextSystem))]

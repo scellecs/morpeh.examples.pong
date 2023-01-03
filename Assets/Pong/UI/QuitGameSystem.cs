@@ -1,6 +1,6 @@
 ﻿namespace Pong.UI {
-    using Morpeh;
-    using Morpeh.Globals;
+    using Scellecs.Morpeh.Globals.Events;
+    using Scellecs.Morpeh.Systems;
     using UnityEditor;
     using UnityEngine;
 

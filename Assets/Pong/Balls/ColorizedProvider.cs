@@ -1,7 +1,8 @@
 ﻿namespace Pong.Balls {
     using System;
-    using Morpeh;
-    using Morpeh.Globals;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Globals.Variables;
+    using Scellecs.Morpeh.Providers;
     using Sirenix.OdinInspector;
     using UnityEngine;
 

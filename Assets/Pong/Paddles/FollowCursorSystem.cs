@@ -1,5 +1,6 @@
 ﻿namespace Pong.Paddles {
-    using Morpeh;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/" + nameof(FollowCursorSystem))]

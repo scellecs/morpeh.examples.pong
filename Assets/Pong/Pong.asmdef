@@ -1,9 +1,11 @@
 {
     "name": "Pong",
+    "rootNamespace": "",
     "references": [
         "Scellecs.Morpeh",
         "Morpeh.Helpers",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Scellecs.Morpeh.Globals"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

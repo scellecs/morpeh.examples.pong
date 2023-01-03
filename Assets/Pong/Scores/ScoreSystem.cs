@@ -1,7 +1,7 @@
 ﻿namespace Pong.Scores {
-    using Morpeh;
-    using Morpeh.Globals;
-    using Morpeh.Helpers;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Globals.Variables;
+    using Scellecs.Morpeh.Helpers;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/" + nameof(ScoreSystem))]

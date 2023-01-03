@@ -1,6 +1,7 @@
 ﻿namespace Pong.Paddles {
     using System;
-    using Morpeh;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Providers;
     using UnityEngine;
 
     [Serializable]

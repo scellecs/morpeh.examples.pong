@@ -1,6 +1,7 @@
 ﻿namespace Pong.Walls {
     using System;
-    using Morpeh;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Providers;
     using Sirenix.OdinInspector;
     using UnityEngine;
 

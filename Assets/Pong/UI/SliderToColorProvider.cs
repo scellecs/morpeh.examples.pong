@@ -1,7 +1,8 @@
 ﻿namespace Pong.UI {
     using System;
-    using Morpeh;
-    using Morpeh.Globals;
+    using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Globals.Variables;
+    using Scellecs.Morpeh.Providers;
     using Sirenix.OdinInspector;
     using UnityEngine;
     using UnityEngine.UI;
@@ -9,9 +10,7 @@
     [Serializable]
     public struct SliderToColor : IComponent, IValidatableWithGameObject {
         [Required] public Slider slider;
-
         [Required] public GlobalVariableColor color;
-
         [ReadOnly] public bool sliderChanged;
 
         public void OnValidate(GameObject gameObject) {
