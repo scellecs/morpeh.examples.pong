@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.farco.morpeh.helpers": "https://github.com/SH42913/morpeh.helpers.git?path=/Assets/Morpeh.Helpers#master",
     "com.scellecs.morpeh": "https://github.com/scellecs/morpeh.git#master",
     "com.scellecs.morpeh.globals": "https://github.com/scellecs/morpeh.globals.git",
     "com.unity.2d.pixel-perfect": "4.0.1",

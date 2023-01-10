@@ -1,14 +1,26 @@
 ﻿namespace Pong.Balls {
     using System;
     using Scellecs.Morpeh;
-    using Scellecs.Morpeh.Helpers;
+    using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/" + nameof(BallVelocitySystem))]
-    public sealed class BallVelocitySystem : SimpleUpdateSystem<Ball> {
-        [Range(0f, 0.9f)] public float maxStartVelocityDot = 0.2f;
+    public sealed class BallVelocitySystem : UpdateSystem {
+        [Range(0f, 0.9f)] public float maxStartVelocityDot = 0.4f;
 
-        protected override void Process(Entity entity, ref Ball ball, in float deltaTime) {
+        private Filter filter;
+
+        public override void OnAwake() {
+            filter = World.Filter.With<Ball>();
+        }
+
+        public override void OnUpdate(float deltaTime) {
+            foreach (Entity entity in filter) {
+                UpdateBall(ref entity.GetComponent<Ball>());
+            }
+        }
+
+        private void UpdateBall(ref Ball ball) {
             if (ball.body.velocity.sqrMagnitude <= 0f) {
                 ball.SetVelocity(ball.speed * GetStartDirection());
             }
@@ -28,10 +40,6 @@
             } while (Math.Abs(Vector2.Dot(direction, Vector2.up)) <= maxStartVelocityDot);
 
             return direction;
-        }
-
-        public static BallVelocitySystem Create() {
-            return CreateInstance<BallVelocitySystem>();
         }
     }
 }

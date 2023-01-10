@@ -1,25 +1,33 @@
 ﻿namespace Pong.UI {
     using Scellecs.Morpeh;
-    using Scellecs.Morpeh.Helpers;
+    using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/UI/" + nameof(GlobalIntToTextSystem))]
-    public sealed class GlobalIntToTextSystem : SimpleLateUpdateSystem<GlobalIntToText> {
-        protected override void Process(Entity entity, ref GlobalIntToText component, in float deltaTime) {
-            foreach (GlobalIntToText.IntToConvert toConvert in component.integersToConvert) {
-                if (!inAwake && !toConvert.global) {
-                    return;
-                }
+    public sealed class GlobalIntToTextSystem : LateUpdateSystem {
+        private Filter filter;
 
-                var value = toConvert.global.Value.ToString();
-                toConvert.text.text = !string.IsNullOrEmpty(toConvert.format)
-                        ? string.Format(toConvert.format, value)
-                        : value;
+        public override void OnAwake() {
+            filter = World.Filter.With<GlobalIntToText>();
+        }
+
+        public override void OnUpdate(float deltaTime) {
+            foreach (Entity entity in filter) {
+                Process(ref entity.GetComponent<GlobalIntToText>());
             }
         }
 
-        public static GlobalIntToTextSystem Create() {
-            return CreateInstance<GlobalIntToTextSystem>();
+        private void Process(ref GlobalIntToText intToText) {
+            foreach (GlobalIntToText.IntToConvert toConvert in intToText.integersToConvert) {
+                if (!intToText.hasActualValues || toConvert.global.IsPublished) {
+                    var value = toConvert.global.Value.ToString();
+                    toConvert.text.text = !string.IsNullOrEmpty(toConvert.format)
+                            ? string.Format(toConvert.format, value)
+                            : value;
+
+                    intToText.hasActualValues = true;
+                }
+            }
         }
     }
 }

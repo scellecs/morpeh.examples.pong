@@ -49,9 +49,5 @@
                 default:                 throw new ArgumentOutOfRangeException();
             }
         }
-
-        public static AlignToScreenSideSystem Create() {
-            return CreateInstance<AlignToScreenSideSystem>();
-        }
     }
 }

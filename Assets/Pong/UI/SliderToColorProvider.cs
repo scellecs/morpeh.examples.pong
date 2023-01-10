@@ -12,6 +12,7 @@
         [Required] public Slider slider;
         [Required] public GlobalVariableColor color;
         [ReadOnly] public bool sliderChanged;
+        [ReadOnly] public bool hasActualValue;
 
         public void OnValidate(GameObject gameObject) {
             if (slider == null) {

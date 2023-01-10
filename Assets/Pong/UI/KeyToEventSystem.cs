@@ -18,10 +18,6 @@
             }
         }
 
-        public static KeyToEventSystem Create() {
-            return CreateInstance<KeyToEventSystem>();
-        }
-
         [Serializable]
         public struct KeyToEvent {
             public KeyCode keyCode;

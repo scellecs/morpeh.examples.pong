@@ -1,21 +1,27 @@
 ﻿namespace Pong.UI {
     using Scellecs.Morpeh;
-    using Scellecs.Morpeh.Helpers;
+    using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/UI/" + nameof(SliderToColorSystem))]
-    public sealed class SliderToColorSystem : SimpleLateUpdateSystem<SliderToColor> {
-        protected override void Process(Entity entity, ref SliderToColor component, in float deltaTime) {
-            if (inAwake || component.color) {
-                Color.RGBToHSV(component.color.Value, out float h, out _, out _);
-                component.slider.value = h;
-            } else if (component.sliderChanged) {
-                component.color.Value = Color.HSVToRGB(component.slider.value, 1f, 1f);
-            }
+    public sealed class SliderToColorSystem : LateUpdateSystem {
+        private Filter filter;
+
+        public override void OnAwake() {
+            filter = World.Filter.With<SliderToColor>();
         }
 
-        public static SliderToColorSystem Create() {
-            return CreateInstance<SliderToColorSystem>();
+        public override void OnUpdate(float deltaTime) {
+            foreach (Entity entity in filter) {
+                ref SliderToColor slider = ref entity.GetComponent<SliderToColor>();
+                if (!slider.hasActualValue || slider.color != null) {
+                    Color.RGBToHSV(slider.color.Value, out float h, out _, out _);
+                    slider.slider.value = h;
+                    slider.hasActualValue = true;
+                } else if (slider.sliderChanged) {
+                    slider.color.Value = Color.HSVToRGB(slider.slider.value, 1f, 1f);
+                }
+            }
         }
     }
 }

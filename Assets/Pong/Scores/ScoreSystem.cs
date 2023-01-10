@@ -1,29 +1,34 @@
 ﻿namespace Pong.Scores {
     using Scellecs.Morpeh;
     using Scellecs.Morpeh.Globals.Variables;
-    using Scellecs.Morpeh.Helpers;
+    using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/" + nameof(ScoreSystem))]
-    public sealed class ScoreSystem : SimpleUpdateSystem<HitScoreCounter> {
+    public sealed class ScoreSystem : UpdateSystem {
         public GlobalVariableInt currentScores;
         public GlobalVariableInt highScores;
 
-        protected override void Process(Entity entity, ref HitScoreCounter counter, in float deltaTime) {
-            if (!counter.hit) {
-                return;
-            }
+        private Filter filter;
 
-            currentScores.Value++;
-            counter.hit = false;
-
-            if (currentScores.Value > highScores.Value) {
-                highScores.Value = currentScores.Value;
-            }
+        public override void OnAwake() {
+            filter = World.Filter.With<HitScoreCounter>();
         }
 
-        public static ScoreSystem Create() {
-            return CreateInstance<ScoreSystem>();
+        public override void OnUpdate(float deltaTime) {
+            foreach (Entity entity in filter) {
+                ref HitScoreCounter counter = ref entity.GetComponent<HitScoreCounter>();
+                if (!counter.hit) {
+                    continue;
+                }
+
+                currentScores.Value++;
+                counter.hit = false;
+
+                if (currentScores.Value > highScores.Value) {
+                    highScores.Value = currentScores.Value;
+                }
+            }
         }
     }
 }

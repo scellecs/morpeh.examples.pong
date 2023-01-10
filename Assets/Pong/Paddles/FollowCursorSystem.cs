@@ -44,9 +44,5 @@
 
             follower.root.position = newPosition;
         }
-
-        public static FollowCursorSystem Create() {
-            return CreateInstance<FollowCursorSystem>();
-        }
     }
 }

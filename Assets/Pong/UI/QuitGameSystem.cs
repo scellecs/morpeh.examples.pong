@@ -19,9 +19,5 @@
 #endif
             }
         }
-
-        public static QuitGameSystem Create() {
-            return CreateInstance<QuitGameSystem>();
-        }
     }
 }

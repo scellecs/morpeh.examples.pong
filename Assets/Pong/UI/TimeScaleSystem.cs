@@ -14,9 +14,5 @@
                 Time.timeScale = Time.timeScale <= 0f ? 1f : 0f;
             }
         }
-
-        public static TimeScaleSystem Create() {
-            return CreateInstance<TimeScaleSystem>();
-        }
     }
 }

@@ -1,7 +1,6 @@
 # Morpeh Pong
-A pong-like game example using [Morpeh ECS framework](https://github.com/scellecs/morpeh), 
-[Morpeh Globals](https://github.com/scellecs/morpeh.globals) and 
-[Morpeh Helpers](https://github.com/SH42913/morpeh.helpers). \
+A pong-like game example using [Morpeh ECS framework](https://github.com/scellecs/morpeh) and 
+[Morpeh Globals](https://github.com/scellecs/morpeh.globals). \
 Be aware, that was just my test job, so the project has no best practices and **must be used only as an example, not as a guide**.
 
 ![image](https://user-images.githubusercontent.com/17111024/148913018-de382745-2606-4d39-99c4-4a7f74f328d2.png)
