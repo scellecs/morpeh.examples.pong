@@ -10,7 +10,7 @@
 
         public override void OnAwake() {
             camera = Camera.main;
-            followers = World.Filter.With<FollowCursor>();
+            followers = World.Filter.With<Paddle>();
         }
 
         public override void OnUpdate(float deltaTime) {
@@ -23,17 +23,17 @@
 
             Vector3 positionUnderMouse = camera.ScreenToWorldPoint(mouseInput);
             foreach (Entity entity in followers) {
-                ref FollowCursor follower = ref entity.GetComponent<FollowCursor>();
+                ref Paddle follower = ref entity.GetComponent<Paddle>();
                 ProcessFollower(ref follower, positionUnderMouse);
             }
         }
 
-        private static void ProcessFollower(ref FollowCursor follower, Vector3 worldPosition) {
+        private static void ProcessFollower(ref Paddle follower, Vector3 worldPosition) {
             if (!follower.xAxis && !follower.yAxis) {
                 return;
             }
 
-            Vector2 newPosition = follower.root.position;
+            Vector2 newPosition = follower.body.position;
             if (follower.xAxis) {
                 newPosition.x = worldPosition.x;
             }
@@ -42,7 +42,7 @@
                 newPosition.y = worldPosition.y;
             }
 
-            follower.root.position = newPosition;
+            follower.body.position = newPosition;
         }
     }
 }
