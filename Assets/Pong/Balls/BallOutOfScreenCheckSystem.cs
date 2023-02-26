@@ -1,6 +1,7 @@
 ﻿namespace Pong.Balls {
     using System;
     using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Globals.Events;
     using Scellecs.Morpeh.Systems;
     using UnityEngine;
     using Utils;
@@ -8,6 +9,7 @@
     [CreateAssetMenu(menuName = "Pong/" + nameof(BallOutOfScreenCheckSystem))]
     public sealed class BallOutOfScreenCheckSystem : UpdateSystem {
         public float tolerance = 1f;
+        public GlobalEvent ballIsOut;
 
         private Camera camera;
         private Filter filter;
@@ -34,6 +36,7 @@
             ball.body.velocity = Vector2.zero;
             ball.body.transform.position = Vector2.zero;
             ball.trail.Clear();
+            ballIsOut.Publish();
         }
     }
 }

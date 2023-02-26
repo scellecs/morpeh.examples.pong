@@ -10,16 +10,24 @@
         public GlobalVariableInt currentScores;
         public GlobalVariableInt highScores;
         public GlobalEvent resetScores;
+        public GlobalEvent[] decreaseScoresTriggers;
 
         private Filter filter;
 
         public override void OnAwake() {
             filter = World.Filter.With<HitScoreCounter>();
+            currentScores.Value = 0;
         }
 
         public override void OnUpdate(float deltaTime) {
             if (resetScores.IsPublished) {
                 highScores.SetValue(0);
+            }
+
+            foreach (GlobalEvent trigger in decreaseScoresTriggers) {
+                if (trigger.IsPublished) {
+                    currentScores.Value -= trigger.BatchedChanges.Count;
+                }
             }
 
             foreach (Entity entity in filter) {
