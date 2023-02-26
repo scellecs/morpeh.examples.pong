@@ -10,7 +10,7 @@
         [Required] public SpriteRenderer renderer;
 
         [Required] public Rigidbody2D body;
-        public TrailRenderer trail;
+        [Required] public TrailRenderer trail;
 
         [MinValue(0.5f)] public float speed;
 
@@ -37,6 +37,7 @@
         [Serializable]
         public struct HitData {
             public Vector2 normal;
+            public Vector2 hitPos;
             public Entity entity;
         }
     }
@@ -47,8 +48,10 @@
     public sealed class BallProvider : MonoProvider<Ball> {
         private void OnCollisionEnter2D(Collision2D collision) {
             ref Ball data = ref GetData();
+            ContactPoint2D contact = collision.GetContact(0);
             var hit = new Ball.HitData {
-                    normal = collision.GetContact(0).normal,
+                    hitPos = contact.point,
+                    normal = contact.normal,
             };
 
             var entityProvider = collision.gameObject.GetComponent<EntityProvider>();

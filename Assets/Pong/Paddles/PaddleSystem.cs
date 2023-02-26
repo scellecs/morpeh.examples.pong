@@ -3,14 +3,14 @@
     using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Pong/" + nameof(FollowCursorSystem))]
-    public sealed class FollowCursorSystem : UpdateSystem {
+    [CreateAssetMenu(menuName = "Pong/" + nameof(PaddleSystem))]
+    public sealed class PaddleSystem : UpdateSystem {
         private Camera camera;
-        private Filter followers;
+        private Filter paddles;
 
         public override void OnAwake() {
             camera = Camera.main;
-            followers = World.Filter.With<Paddle>();
+            paddles = World.Filter.With<Paddle>();
         }
 
         public override void OnUpdate(float deltaTime) {
@@ -22,27 +22,27 @@
             mouseInput.z = -camera.transform.position.z;
 
             Vector3 positionUnderMouse = camera.ScreenToWorldPoint(mouseInput);
-            foreach (Entity entity in followers) {
-                ref Paddle follower = ref entity.GetComponent<Paddle>();
-                ProcessFollower(ref follower, positionUnderMouse);
+            foreach (Entity entity in paddles) {
+                ProcessPaddle(ref entity.GetComponent<Paddle>(), positionUnderMouse);
             }
         }
 
-        private static void ProcessFollower(ref Paddle follower, Vector3 worldPosition) {
-            if (!follower.xAxis && !follower.yAxis) {
+        private static void ProcessPaddle(ref Paddle paddle, Vector3 worldPosition) {
+            if (!paddle.xAxis && !paddle.yAxis) {
+                Debug.LogWarning($"{nameof(Paddle)} has no direction, are you sure?");
                 return;
             }
 
-            Vector2 newPosition = follower.body.position;
-            if (follower.xAxis) {
+            Vector2 newPosition = paddle.body.position;
+            if (paddle.xAxis) {
                 newPosition.x = worldPosition.x;
             }
 
-            if (follower.yAxis) {
+            if (paddle.yAxis) {
                 newPosition.y = worldPosition.y;
             }
 
-            follower.body.position = newPosition;
+            paddle.body.position = newPosition;
         }
     }
 }

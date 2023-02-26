@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedData:
     body: {fileID: 4236725506876825681}
+    collider: {fileID: 8678399304558025621}
     xAxis: 1
     yAxis: 0
 --- !u!114 &8678399304558025622
