@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScores: {fileID: 11400000, guid: 148cb2ea4200d8149a968ab9db88621c, type: 2}
   highScores: {fileID: 11400000, guid: c4b1ffcd46ca0704387321044a6f7883, type: 2}
+  resetScores: {fileID: 11400000, guid: 80c99eb7e1943954fb823113802e7f45, type: 2}
