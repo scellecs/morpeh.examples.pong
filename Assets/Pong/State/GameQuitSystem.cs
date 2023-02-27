@@ -1,11 +1,11 @@
-﻿namespace Pong.UI {
+﻿namespace Pong.State {
     using Scellecs.Morpeh.Globals.Events;
     using Scellecs.Morpeh.Systems;
     using UnityEditor;
     using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Pong/UI/" + nameof(QuitGameSystem))]
-    public sealed class QuitGameSystem : LateUpdateSystem {
+    [CreateAssetMenu(menuName = "Pong/State/" + nameof(GameQuitSystem))]
+    public sealed class GameQuitSystem : LateUpdateSystem {
         public GlobalEvent exitEvent;
 
         public override void OnAwake() { }

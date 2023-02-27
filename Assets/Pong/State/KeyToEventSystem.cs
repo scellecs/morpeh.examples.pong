@@ -1,11 +1,11 @@
-﻿namespace Pong.UI {
+﻿namespace Pong.State {
     using System;
     using Scellecs.Morpeh.Globals.Events;
     using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Pong/UI/" + nameof(KeyToEventSystem))]
-    public sealed class KeyToEventSystem : LateUpdateSystem {
+    [CreateAssetMenu(menuName = "Pong/State/" + nameof(KeyToEventSystem))]
+    public sealed class KeyToEventSystem : UpdateSystem {
         public KeyToEvent[] keys;
 
         public override void OnAwake() { }

@@ -3,8 +3,8 @@
     using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
-    [CreateAssetMenu(menuName = "Pong/UI/" + nameof(SwitchCanvasGroupSystem))]
-    public sealed class SwitchCanvasGroupSystem : LateUpdateSystem {
+    [CreateAssetMenu(menuName = "Pong/UI/" + nameof(CanvasGroupSwitchSystem))]
+    public sealed class CanvasGroupSwitchSystem : LateUpdateSystem {
         private Filter filter;
 
         public override void OnAwake() {

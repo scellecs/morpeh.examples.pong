@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4628e4df5d634a14812824377825e55e, type: 3}
-  m_Name: Switch Canvas Group System
+  m_Script: {fileID: 11500000, guid: 72d1ec2401bc4e1bb6dadd75ae2d5b91, type: 3}
+  m_Name: Align To Screen Side System
   m_EditorClassIdentifier: 

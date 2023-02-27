@@ -4,7 +4,7 @@
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/" + nameof(ColorizedSystem))]
-    public sealed class ColorizedSystem : UpdateSystem {
+    public sealed class ColorizedSystem : LateUpdateSystem {
         private Filter filter;
 
         public override void OnAwake() {

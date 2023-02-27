@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9026799284825123153}
   - component: {fileID: 9026799284825123152}
   m_Layer: 0
-  m_Name: '[Installer] Main'
+  m_Name: '[Installer] UI'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,21 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3e5db895821594790574b8473edacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 0
+  order: 10
   initializers: []
-  updateSystems:
-  - enabled: 1
-    system: {fileID: 11400000, guid: 70a1ad332078d09498e02d0aecd94978, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: 3c5c848fd684dcc40b6c12eca74d1138, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: c3f8e2559fd00d4439adeb89c055fd52, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: ab05135e35e16aa45987644f0172b13f, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: fa40cdaa41eaf6648bafd27e1857e0ac, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: 18fc866ab8562ce4281415c6d92d5dda, type: 2}
+  updateSystems: []
   fixedUpdateSystems: []
   lateUpdateSystems:
   - enabled: 1
@@ -65,10 +53,5 @@ MonoBehaviour:
   - enabled: 1
     system: {fileID: 11400000, guid: d777c9a5d4390b048a21da155ec234d6, type: 2}
   - enabled: 1
-    system: {fileID: 11400000, guid: 28baf3b9e51c4bf4c9acd916300cf108, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: c6a12797f513c1a49bf1d7906cddaf45, type: 2}
-  - enabled: 1
     system: {fileID: 11400000, guid: 0e55ec5d4fb4ce945a842be3aabe0f05, type: 2}
-  - enabled: 1
-    system: {fileID: 11400000, guid: f74e27ab903f225418ba88fad6e3b3a2, type: 2}
+  cleanupSystems: []
