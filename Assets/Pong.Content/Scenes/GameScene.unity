@@ -787,8 +787,7 @@ MonoBehaviour:
     renderer: {fileID: 1856706824}
     body: {fileID: 1856706826}
     trail: {fileID: 1856706829}
-    speed: 3.5
-    launchVelocity: {x: 0, y: 0}
+    lastVelocity: {x: 0, y: 0}
 --- !u!58 &1856706828
 CircleCollider2D:
   m_ObjectHideFlags: 0

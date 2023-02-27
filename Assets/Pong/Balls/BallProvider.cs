@@ -12,11 +12,9 @@
         [Required] public Rigidbody2D body;
         [Required] public TrailRenderer trail;
 
-        [MinValue(0.5f)] public float speed;
-
         [ReadOnly]
         [Header("Utility things")]
-        public Vector2 launchVelocity;
+        public Vector2 lastVelocity;
 
         [ReadOnly] public HitData? hit;
 
@@ -65,7 +63,7 @@
 
     public static class BallExtensions {
         public static void SetVelocity(this ref Ball ball, Vector2 velocity) {
-            ball.launchVelocity = velocity;
+            ball.lastVelocity = velocity;
             ball.body.velocity = velocity;
         }
     }

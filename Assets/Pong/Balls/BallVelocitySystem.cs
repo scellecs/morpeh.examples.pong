@@ -2,12 +2,14 @@
     using System;
     using Paddles;
     using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Globals.Variables;
     using Scellecs.Morpeh.Systems;
     using UnityEngine;
 
     [CreateAssetMenu(menuName = "Pong/" + nameof(BallVelocitySystem))]
     public sealed class BallVelocitySystem : UpdateSystem {
         [Range(0f, 0.9f)] public float maxStartVelocityDot = 0.4f;
+        public GlobalVariableFloat ballSpeedVar;
 
         private Filter filter;
 
@@ -26,21 +28,23 @@
                 HandleHit(ref ball, ball.hit.Value);
                 ball.hit = null;
             } else if (ball.body.velocity.sqrMagnitude <= 0f) {
-                ball.SetVelocity(ball.speed * GetStartDirection());
+                ball.SetVelocity(ballSpeedVar.Value * GetStartDirection());
+            } else if (ballSpeedVar.IsPublished) {
+                ball.SetVelocity(ballSpeedVar.Value * ball.lastVelocity.normalized);
             }
         }
 
-        private static void HandleHit(ref Ball ball, in Ball.HitData hit) {
+        private void HandleHit(ref Ball ball, in Ball.HitData hit) {
             Paddle paddle = default;
             Vector2 reflectDirection;
             if (TryGetPaddle(hit.entity, ref paddle) && (paddle.xAxis || paddle.yAxis)) {
                 reflectDirection = CalculateReflectDirection(ref paddle, hit);
             } else {
-                reflectDirection = Vector2.Reflect(ball.launchVelocity, hit.normal);
+                reflectDirection = Vector2.Reflect(ball.lastVelocity, hit.normal);
             }
 
             reflectDirection.Normalize();
-            ball.SetVelocity(ball.speed * reflectDirection);
+            ball.SetVelocity(ballSpeedVar.Value * reflectDirection);
         }
 
         private Vector2 GetStartDirection() {
