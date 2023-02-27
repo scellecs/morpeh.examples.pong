@@ -14,12 +14,13 @@
         public override void OnUpdate(float deltaTime) {
             foreach (Entity entity in filter) {
                 ref SliderToColor slider = ref entity.GetComponent<SliderToColor>();
-                if (!slider.hasActualValue || slider.color != null) {
+                if (!slider.hasActualValue) {
                     Color.RGBToHSV(slider.color.Value, out float h, out _, out _);
                     slider.slider.value = h;
                     slider.hasActualValue = true;
                 } else if (slider.sliderChanged) {
                     slider.color.Value = Color.HSVToRGB(slider.slider.value, 1f, 1f);
+                    slider.sliderChanged = false;
                 }
             }
         }
