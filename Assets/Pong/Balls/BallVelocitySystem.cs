@@ -14,7 +14,7 @@
         private Filter filter;
 
         public override void OnAwake() {
-            filter = World.Filter.With<Ball>();
+            filter = World.Filter.With<Ball>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {

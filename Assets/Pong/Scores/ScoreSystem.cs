@@ -15,7 +15,7 @@
         private Filter filter;
 
         public override void OnAwake() {
-            filter = World.Filter.With<HitScoreCounter>();
+            filter = World.Filter.With<HitScoreCounter>().Build();
             currentScores.Value = 0;
         }
 

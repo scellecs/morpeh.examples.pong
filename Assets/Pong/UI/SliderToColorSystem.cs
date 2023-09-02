@@ -8,7 +8,7 @@
         private Filter filter;
 
         public override void OnAwake() {
-            filter = World.Filter.With<SliderToColor>();
+            filter = World.Filter.With<SliderToColor>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {

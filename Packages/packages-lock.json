@@ -1,18 +1,18 @@
 {
   "dependencies": {
     "com.scellecs.morpeh": {
-      "version": "https://github.com/scellecs/morpeh.git#master",
+      "version": "https://github.com/scellecs/morpeh.git#stage-2023.1",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e75b38d3db6456b9ad0538a933479f0b4497c669"
+      "hash": "e536832eaebb1a98000df83f07931f795cea616a"
     },
     "com.scellecs.morpeh.globals": {
-      "version": "https://github.com/scellecs/morpeh.globals.git#main",
+      "version": "https://github.com/scellecs/morpeh.globals.git#develop",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6d6bc0b91bb5b747d7ce80116f44067a79ad0a9b"
+      "hash": "306c26d2a5fdbe698afe17969efed9b4a668d932"
     },
     "com.unity.2d.pixel-perfect": {
       "version": "4.0.1",
