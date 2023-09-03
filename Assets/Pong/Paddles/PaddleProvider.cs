@@ -2,7 +2,7 @@
     using System;
     using Scellecs.Morpeh;
     using Scellecs.Morpeh.Providers;
-    using Sirenix.OdinInspector;
+    using TriInspector;
     using UnityEngine;
 
     [Serializable]

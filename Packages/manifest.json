@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.scellecs.morpeh": "https://github.com/scellecs/morpeh.git#stage-2023.1",
     "com.scellecs.morpeh.globals": "https://github.com/scellecs/morpeh.globals.git#develop",
     "com.unity.2d.pixel-perfect": "4.0.1",
