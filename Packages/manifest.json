@@ -1,8 +1,8 @@
 {
   "dependencies": {
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
-    "com.scellecs.morpeh": "https://github.com/scellecs/morpeh.git#stage-2023.1",
-    "com.scellecs.morpeh.globals": "https://github.com/scellecs/morpeh.globals.git#develop",
+    "com.scellecs.morpeh": "https://github.com/scellecs/morpeh.git#main",
+    "com.scellecs.morpeh.globals": "https://github.com/scellecs/morpeh.globals.git#main",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.rider": "3.0.24",
