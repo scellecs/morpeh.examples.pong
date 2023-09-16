@@ -15,7 +15,7 @@
 
         public override void OnAwake() {
             camera = Camera.main;
-            walls = World.Filter.With<AlignToScreenSide>();
+            walls = World.Filter.With<AlignToScreenSide>().Build();
             UpdateAlignments();
         }
 

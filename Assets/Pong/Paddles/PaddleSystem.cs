@@ -10,7 +10,7 @@
 
         public override void OnAwake() {
             camera = Camera.main;
-            paddles = World.Filter.With<Paddle>();
+            paddles = World.Filter.With<Paddle>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {

@@ -3,7 +3,7 @@
     using Scellecs.Morpeh;
     using Scellecs.Morpeh.Globals.Variables;
     using Scellecs.Morpeh.Providers;
-    using Sirenix.OdinInspector;
+    using TriInspector;
     using TMPro;
     using UnityEngine;
 

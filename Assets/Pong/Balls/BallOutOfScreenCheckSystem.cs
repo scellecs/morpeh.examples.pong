@@ -16,7 +16,7 @@
 
         public override void OnAwake() {
             camera = Camera.main;
-            filter = World.Filter.With<Ball>();
+            filter = World.Filter.With<Ball>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {

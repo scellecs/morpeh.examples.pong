@@ -8,7 +8,7 @@
         private Filter filter;
 
         public override void OnAwake() {
-            filter = World.Filter.With<Colorized>();
+            filter = World.Filter.With<Colorized>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {

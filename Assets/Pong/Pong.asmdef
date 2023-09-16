@@ -3,9 +3,9 @@
     "rootNamespace": "",
     "references": [
         "Scellecs.Morpeh",
-        "Morpeh.Helpers",
         "Unity.TextMeshPro",
-        "Scellecs.Morpeh.Globals"
+        "Scellecs.Morpeh.Globals",
+        "TriInspector"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

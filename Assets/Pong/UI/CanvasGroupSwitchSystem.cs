@@ -8,7 +8,7 @@
         private Filter filter;
 
         public override void OnAwake() {
-            filter = World.Filter.With<CanvasGroupSwitcher>();
+            filter = World.Filter.With<CanvasGroupSwitcher>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {

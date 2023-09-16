@@ -8,7 +8,7 @@
         private Filter filter;
 
         public override void OnAwake() {
-            filter = World.Filter.With<GlobalIntToText>();
+            filter = World.Filter.With<GlobalIntToText>().Build();
         }
 
         public override void OnUpdate(float deltaTime) {
